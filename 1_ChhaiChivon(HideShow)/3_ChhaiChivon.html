@@ -15,21 +15,15 @@
 		$(document).ready(function()
 		{
             
-            if($('#btn').val('Hide'))
-            {
-                 $('#btn').click(function()
-                    {
-                        $('#slideUpbox').slideToggle('slow');
-                        $("#btn").val('Show');
-                    });
-            }
-            else
-            {
-                    $("#btn").val() = "Hide";
-        
-            
-            }
-            
+            $('#btn').click(function(){
+            	$('#slideUpbox').slideToggle('slow');
+           			/*var changeText = document.getElementById('btn');*/
+           		if($('#btn').val()=="Hide"){
+           			$("#btn").attr('value', 'Show');
+           		}else{
+           			$("#btn").attr('value', 'Hide');
+           		}
+            });
 		});
 
 
@@ -41,12 +35,16 @@
 			background-color: aqua;
             padding: 2px;
             border: 2px solid green;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-style: groove;
+            color: chartreuse;
 		}
 		#btn{
 			float: right;
             height: 50px;
             width: 200px;
-			
+			border: 1px solid red;
 		}
         #mytext{
             float: right;

@@ -13,31 +13,33 @@
 	<script type="text/javascript">
 
         $(document).ready(function(){
-            $('#image').hide();
-            $('#btn').show(function{
-                        $('img').show('slow');   
-                           });
+          
+            $("#btn").click(function{
+                        $("img").show();  
+                       
+            });
+            
 //            $("#image").animate(left:'100%')
 
               
         });
-        function animation()
-        {
-                $("div").animate({left: '250px'}, function()
-                                 {
-                        $("div").animate({left: '0px'},function(){
-                            animation();
-                        });
-                });
-        }
+//        function animation()
+//        {
+//                $("div").animate({left: '250px'}, function()
+//                                 {
+//                        $("div").animate({left: '0px'},function(){
+//                            animation();
+//                        });
+//                });
+//        }
 
     </script>
     <!--CSS Code-->
 	<style type="text/css">
 	    
         img{
-            height: 30em;
-            width: 30em;
+            display: none;
+           
         }
         
         
@@ -50,10 +52,10 @@
     <div class="row">
         <div class="col-md-8 col-md-12 col-lg-8 col-lg-12">
             <div id="image">
-                    <img  src="slide/img1.png" style="position:absolute; right:0px" />
-                    <img  src="slide/img2.jpg" style="position:absolute right:0px" />   
+                    <img  src="slide/img1.png"/>
+                    <img  src="slide/img2.jpg"/>   
             </div> 
-            <input type="button" id="btn" value="test">
+            <input type="button" id="btn" value="Click Me">
         </div>
     </div>
 </div>
