@@ -13,14 +13,23 @@
 	<script type="text/javascript">
 
         $(document).ready(function(){
+            $('#image').hide();
             $('#btn').show(function{
-                        $('img').show();   
+                        $('img').show('slow');   
                            });
 //            $("#image").animate(left:'100%')
 
               
         });
-        
+        function animation()
+        {
+                $("div").animate({left: '250px'}, function()
+                                 {
+                        $("div").animate({left: '0px'},function(){
+                            animation();
+                        });
+                });
+        }
 
     </script>
     <!--CSS Code-->
