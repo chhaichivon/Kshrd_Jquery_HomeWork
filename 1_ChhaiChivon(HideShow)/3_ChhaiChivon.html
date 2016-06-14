@@ -14,49 +14,21 @@
 
 		$(document).ready(function()
 		{
-            $("#btn").attr('value','Show')
-//             var $target = $('#slideUpbox'),
-//             $toggle = $(this);
-//
-//            $("#btn").click(function{
-//                         $target.slideToggle( 500, function () {
-//                            $toggle.text(($target.is(':visible') ? 'Hide' : 'Show') + ' My Bag');
-//                        });   
-//                });
-                 $("#btn").attr('value','Hide')
-            $('#btn').click(function(){
-                    $('#slideUpbox').toggle('slow');
-                    $("#btn").attr('value','Show')
-            });
             
-//            $('#btn').click(function(){
-//                    $('#slideUpbox').show('slow');
-//                //$("#btn").attr('value','Hide')
-//            });
+            if($('#btn').val('Hide'))
+            {
+                 $('#btn').click(function()
+                    {
+                        $('#slideUpbox').slideToggle('slow');
+                        $("#btn").val('Show');
+                    });
+            }
+            else
+            {
+                    $("#btn").val('Hide');
+        
             
-            
-//            $("#btn").click(function()
-//                             {
-//                $("#slideUpbox").hide( "slide", 
-//                      { direction: "up"  }, 500 );
-//            });
-            
-//            if($("#btn").text('Show') ==  $("#btn").text('Show');)
-//            {
-//                $("#btn").click(function()
-//				{
-//                    $("#slideUpbox").hide('slow');
-//                    $("btn").text('Show');
-//                });
-//            }
-//            else
-//            {
-//                $("#btn").click(function()
-//				{
-//                    $("#slideUpbox").show();
-//                    $("#btn").text('Hide');
-//                });
-//            }
+            }
             
 		});
 
@@ -67,9 +39,13 @@
 	    #slideUpbox{
 			height: 100px;   
 			background-color: aqua;
+            padding: 2px;
+            border: 2px solid green;
 		}
 		#btn{
 			float: right;
+            height: 50px;
+            width: 200px;
 			
 		}
         #mytext{
@@ -105,7 +81,7 @@
                     
             </div>
             <div class="co-md-2" id="mylogo">
-                <img src="logo.png"  class="responsive-img" width="60px" height="60px">
+                <img src="logo.png"  class="responsive-img" width="80px" height="80px">
             </div>
             <div class="col-md-2" id="mytitle">
                 <p>Khmer Academy</p>
@@ -120,7 +96,7 @@
             <div class="col-md-10">
             </div>
             <div class="col-md-2">
-                <input id="btn" type="button">
+                <input id="btn" type="button" value="Hide">
             </div>
         </div>
     </div>

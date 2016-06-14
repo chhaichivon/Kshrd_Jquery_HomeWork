@@ -13,7 +13,10 @@
 	<script type="text/javascript">
 
         $(document).ready(function(){
-            $("#image").animate(left:'100%')
+            $('#btn').show(function{
+                        $('img').show();   
+                           });
+//            $("#image").animate(left:'100%')
 
               
         });
@@ -23,9 +26,9 @@
     <!--CSS Code-->
 	<style type="text/css">
 	    
-        #image{
-            height: 100%;
-            width: 100%;
+        img{
+            height: 30em;
+            width: 30em;
         }
         
         
@@ -41,7 +44,7 @@
                     <img  src="slide/img1.png" style="position:absolute; right:0px" />
                     <img  src="slide/img2.jpg" style="position:absolute right:0px" />   
             </div> 
-            
+            <input type="button" id="btn" value="test">
         </div>
     </div>
 </div>
