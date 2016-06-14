@@ -14,24 +14,49 @@
 
 		$(document).ready(function()
 		{
-            $("#btn").text('Show');
+            $("#btn").attr('value','Show')
+//             var $target = $('#slideUpbox'),
+//             $toggle = $(this);
+//
+//            $("#btn").click(function{
+//                         $target.slideToggle( 500, function () {
+//                            $toggle.text(($target.is(':visible') ? 'Hide' : 'Show') + ' My Bag');
+//                        });   
+//                });
+                 $("#btn").attr('value','Hide')
+            $('#btn').click(function(){
+                    $('#slideUpbox').toggle('slow');
+                    $("#btn").attr('value','Show')
+            });
             
-            if($("#btn").text('Show'))
-            {
-                $("#btn").click(function()
-				{
-                    $("#slideUpbox").hide('slow');
-                    $("btn").text('Show');
-                });
-            }
-            else
-            {
-                $("#btn").click(function()
-				{
-                    $("#slideUpbox").show();
-                    $("#btn").text('Hide');
-                });
-            }
+//            $('#btn').click(function(){
+//                    $('#slideUpbox').show('slow');
+//                //$("#btn").attr('value','Hide')
+//            });
+            
+            
+//            $("#btn").click(function()
+//                             {
+//                $("#slideUpbox").hide( "slide", 
+//                      { direction: "up"  }, 500 );
+//            });
+            
+//            if($("#btn").text('Show') ==  $("#btn").text('Show');)
+//            {
+//                $("#btn").click(function()
+//				{
+//                    $("#slideUpbox").hide('slow');
+//                    $("btn").text('Show');
+//                });
+//            }
+//            else
+//            {
+//                $("#btn").click(function()
+//				{
+//                    $("#slideUpbox").show();
+//                    $("#btn").text('Hide');
+//                });
+//            }
             
 		});
 
@@ -41,7 +66,7 @@
 	<style type="text/css">
 	    #slideUpbox{
 			height: 100px;   
-			background-color: red;
+			background-color: aqua;
 		}
 		#btn{
 			float: right;
@@ -85,7 +110,7 @@
             <div class="col-md-2" id="mytitle">
                 <p>Khmer Academy</p>
                 <p>khmeracademy@gmail.com</p>
-                <p>Visit Our Website<a href="#">Here</a></p>
+                <p>Visit Our Website<a href="http://khmeracademy.org/" target="_new">Here</a></p>
             </div>
                 
        </div>
