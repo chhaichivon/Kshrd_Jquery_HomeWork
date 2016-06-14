@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Flow</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!--Code Jquery-->
+    <script>
+        $(document).ready(function(){
+            animation();
+        });
+        
+        function animation(){
+          $("div").animate({
+              left: '500px'
+          }, function(){
+                $("div").animate({
+                    left: '1000px'},function(){
+                        animation();
+                        });
+          });
+        }
+    
+    
+    
+    
+    </script>
+    <!--Code CSS-->
+    <stryle>
+    
+    
+    </stryle>
+</head>
+<body>
+    <div class="container-fluid">
+        <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+    </div>
+    
+</body>
+</html>

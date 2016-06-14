@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Hide & Show</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <!--Jquery Code-->
+	<script type="text/javascript">
+
+		$(document).ready(function()
+		{
+            $("#btn").text('Show');
+            
+            if($("#btn").text('Show'))
+            {
+                $("#btn").click(function()
+				{
+                    $("#slideUpbox").hide('slow');
+                    $("btn").text('Show');
+                });
+            }
+            else
+            {
+                $("#btn").click(function()
+				{
+                    $("#slideUpbox").show();
+                    $("#btn").text('Hide');
+                });
+            }
+            
+		});
+
+
+	</script>
+    <!--CSS Code-->
+	<style type="text/css">
+	    #slideUpbox{
+			height: 100px;   
+			background-color: red;
+		}
+		#btn{
+			float: right;
+			
+		}
+        #mytext{
+            float: right;
+            color: rebeccapurple;
+        }
+        #mytitle{
+            float: right;
+            margin-top: 10px;
+            margin-bottom: 2px;
+            margin-right: 10px;
+        }
+        #mylogo{
+            float: right;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 2px;
+            margin-right: 20px;
+        }
+        p{
+            color: black;
+            font: 12px;
+            float: right;
+        }
+	</style>
+</head>
+    <!--Body Code-->
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" id="slideUpbox">
+            <div class="col-md-8"> 
+                    
+            </div>
+            <div class="co-md-2" id="mylogo">
+                <img src="logo.png"  class="responsive-img" width="60px" height="60px">
+            </div>
+            <div class="col-md-2" id="mytitle">
+                <p>Khmer Academy</p>
+                <p>khmeracademy@gmail.com</p>
+                <p>Visit Our Website<a href="#">Here</a></p>
+            </div>
+                
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-2">
+                <input id="btn" type="button">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    <!--End Body Code-->
+</html>

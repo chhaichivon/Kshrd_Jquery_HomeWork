@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Hide & Show</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <!--Jquery Code-->
+	<script type="text/javascript">
+
+        $(document).ready(function(){
+            $("#image").animate(left:'100%')
+
+              
+        });
+        
+
+    </script>
+    <!--CSS Code-->
+	<style type="text/css">
+	    
+        #image{
+            height: 100%;
+            width: 100%;
+        }
+        
+        
+        
+	</style>
+</head>
+    <!--Body Code-->
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-12 col-lg-8 col-lg-12">
+            <div id="image">
+                    <img  src="slide/img1.png" style="position:absolute; right:0px" />
+                    <img  src="slide/img2.jpg" style="position:absolute right:0px" />   
+            </div> 
+            
+        </div>
+    </div>
+</div>
+</body>
+    <!--End Body Code-->
+</html>
