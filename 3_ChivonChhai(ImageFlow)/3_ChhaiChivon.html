@@ -10,29 +10,64 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!--Code Jquery-->
     <script>
+       
         $(document).ready(function(){
-            animation();
+            toleft(),tobutton(),toright(),totop();
         });
         
-        function animation(){
-          $("div").animate({
-              left: '500px'
-          }, function(){
-                $("div").animate({
-                    left: '1000px'},function(){
-                        animation();
-                        });
-          });
+//        function animation()
+//        {
+//         
+//          $("#allbox").animate({
+//              left: '100px',button: '100px',right:'100px',top:'100px'
+//          }, function(){
+//                $("div").animate({
+//                    left: '1000px'},function(){
+//                        animation();
+//                        });
+//            });
+//        }
+        
+      
+        
+        
+        function controlBox1(){
+            
         }
-    
+        function controlBox2(){
+            
+        }
+        function controlBox3(){
+            
+        }
+        function controlBox4(){
+            
+        }
+        function toleft(){
+            $("#box1").animate({left:'100px'},"slow",);
+        }
+        function toright(){
+             $("#box2").animate({right:'100px'},"slow");
+        }
+        function tobutton(){
+             $("#box3").animate({button:'100px'},"slow");
+        }
+        function totop(){
+             $("#box4").animate({top:'100px'},"slow");
+        }
+      
     
     
     
     </script>
     <!--Code CSS-->
     <style>
+        body{
+            height: 100%;
+            width: 100%;
+        }
         #box1{
-            background-color: aqua;
+            background-color: crimson;
             width: 100px;
             height: 100px;
             position: absolute;
@@ -60,7 +95,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" id="allbox">
                 <div id="box1"></div>
                 <div id="box2"></div>
                 <div id="box3"></div>

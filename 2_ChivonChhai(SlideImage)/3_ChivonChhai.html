@@ -13,35 +13,49 @@
 	<script type="text/javascript">
 
         $(document).ready(function(){
-          
-            $("#btn").click(function{
-                        $("img").style('opacity':'0.2');
-                        $("img").show();  
-                       
-            });
-            
-//            $("#image").animate(left:'100%')
-
+            ImageAnimation();
               
         });
-//        function animation()
-//        {
-//                $("div").animate({left: '250px'}, function()
-//                                 {
-//                        $("div").animate({left: '0px'},function(){
-//                            animation();
-//         
-    
-            });
-        }
 
+    function ImageAnimation(){
+            $("#allbox").animate({left:"0",height:"50px",width:"50px"},5000).animate({
+                left:"200px",width:"100px",height:"100px"
+            },5000);
+        
+        
+        
+        
+        
+        
+    }
+//        
+//        $("#allbox").show({width:"100px",width:"100px"},"slow");
+//            $("#allbox").animate({left: '250px'}, function(){
+//              $("#allbox").animate({left: '0px'},function(){ImageAnimation();});
+//              });
+        
+        
+        ////        function animation()
+////        {
+////                $("div").animate({left: '250px'}, function()
+////                                 {
+////                        $("div").animate({left: '0px'},function(){
+////                            animation();
+////         
+//    
+//            });
+//        }
+
+    
     </script>
     <!--CSS Code-->
 	<style type="text/css">
 	    
         img{
+            position: relative;
+            width: 100px;
+            height: 100px;
             display: none;
-           
         }
         
         
@@ -55,9 +69,8 @@
         <div class="col-md-8 col-md-12 col-lg-8 col-lg-12">
             <div id="image">
                     <img  src="slide/img1.png"/>
-                    <img  src="slide/img2.jpg"/>   
+<!--                    <img  src="slide/img2.jpg"/>   -->
             </div> 
-            <input type="button" id="btn" value="Click Me">
         </div>
     </div>
 </div>
