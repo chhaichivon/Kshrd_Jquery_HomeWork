@@ -12,24 +12,50 @@
     <!--Jquery Code-->
 	<script type="text/javascript">
 
+        
+        
         $(document).ready(function(){
-            ImageAnimation();
-              
+               Img();
         });
+        function Img(){
+             $("#img1").animate({
+                    opacity: '1',
+                    width: '500px'
+                }, 2000).animate({left:"500px"},2000,
+                                 function(){
+                                    $(this).hide(2000, function(){$("#img2").animate({
+                                    opacity: '1',
+                                    width: '500px'
+                                }, 2000).animate({left:"500px"},2000, function(){
+                                                                        $(this).hide(2000);
+                                                                        });
+                });
+                 });
+        }
+        
+        
+//        $(document).ready(function(){
+////            ImageAnimation();
+//             $("#image").animate(opacity: '0.4',
+//                        height: '500px',
+//                        width: '500px',6000); /*function(){
+//                                $("#image").animate({left:"100%"},7000); */
+//              
+//             /*});*/
+//        });
 
-    function ImageAnimation(){
-            $("#allbox").animate({left:"0",height:"50px",width:"50px"},5000).animate({
-                left:"200px",width:"100px",height:"100px"
-            },5000);
-        
-        
-        
-        
-        
-        
-    }
+//    function ImageAnimation()
+//        {
+//            $("#image").animate({height:"200px",width:"200px"},function(){
+//                                $("#image").animate({left:"100%"},5000);
+//                         }
+//                    
+//                        
+//                    
+//                
+//        }
 //        
-//        $("#allbox").show({width:"100px",width:"100px"},"slow");
+//        $("#allbox").show({width:"100px",widths:"100px"},"slow");
 //            $("#allbox").animate({left: '250px'}, function(){
 //              $("#allbox").animate({left: '0px'},function(){ImageAnimation();});
 //              });
@@ -51,29 +77,31 @@
     <!--CSS Code-->
 	<style type="text/css">
 	    
-        img{
-            position: relative;
-            width: 100px;
-            height: 100px;
-            display: none;
-        }
-        
+       
         
         
 	</style>
 </head>
     <!--Body Code-->
 <body>
+<!--
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-12 col-lg-8 col-lg-12">
+-->
             <div id="image">
-                    <img  src="slide/img1.png"/>
+                    <img id="img1" src="tt.jpg" style="opacity:0;position:absolute; width:0"/>
+                    <img id="img2" src="slide/img1.png" style="opacity:0;position:absolute; width:0"/>
+                    <img id="img3" src="slide/img2.jpg" style="opacity:0;position:absolute; width:0"/>
+                    <img id="img4" src="slide/img3.jpg" style="opacity:0;position:absolute; width:0"/>
+
 <!--                    <img  src="slide/img2.jpg"/>   -->
             </div> 
+<!--
         </div>
     </div>
 </div>
+-->
 </body>
     <!--End Body Code-->
 </html>

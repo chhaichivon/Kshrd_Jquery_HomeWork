@@ -10,48 +10,44 @@
 
     <!--Jquery Code-->
 	<script type="text/javascript">
-        
-       $(document).ready(function(){
-               $("img").show(100);
-           });
-        
-        
-        function animation(){
-           $("img").animate({left: '500px'}, function(){
-                  $("img").animate({
-                       right: '0px'},function(){
-                           animation();
-                       });
+                var images = new Array ('img4.jpg', 'img2.jpg', 'img3.jpg');
+                var index = 1;
+
+                function rotateImage()
+                {
+                  $('#myImage').fadeOut('fast', function()
+                  {
+                    $(this).attr('src', images[index]);
+
+                    $(this).fadeIn('fast', function()
+                    {
+                      if (index == images.length-1)
+                      {
+                        index = 0;
+                      }
+                      else
+                      {
+                        index++;
+                      }
+                    });
                   });
-        }
-        function functionHide(){
-            $("img").hide();
-        }
-	</script>
-    <!--CSS Code-->
-	<style type="text/css">
-        img{
-            display: none;
-        }
+                }
+
+                $(document).ready(function()
+                {
+                  setInterval (rotateImage, 2500);
+                });
+    </script>
         
-	</style>
+        
+       
 </head>
     <!--Body Code-->
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-8 col-md-12 col-lg-8 col-lg-12">
-          
-                <img src="slide/img1.png">
-<!--
-                 <img src="slide/img2.jpg" alt="">
-                 <img src="slide/img3.jpg" alt="">
-                 <img src="slide/img4.jpg" alt="">
--->
-                 <button id="btn">Click</button>
-        </div>
-    </div>
-</div>
-</body>
+            <div id="test">
+              <img id="myImage" src="img2.jpg" alt="image test" />
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            </div>
+            </body>
     <!--End Body Code-->
 </html>
