@@ -12,10 +12,56 @@
     <script>
        
         $(document).ready(function(){
-            toleft(),tobutton(),toright(),totop();
-        });
+            controlBox1(),controlBox2(),controlBox3(),controlBox4();
+        }); 
         
-//        function animation()
+        function controlBox1(){
+            $("#box1").animate({left:'1450px'},2000,function(){
+                    $('#box1').animate({top:"635px"},150,function(){
+                        $("#box1").animate({left:"50px"},1000,function(){
+                            $("#box1").animate({top:"0px"},2000,function(){
+                                controlBox1();
+                            });
+                        });
+                    });
+            });
+        }
+        function controlBox2(){
+              $("#box2").animate({left:'1445px'},1000,function(){
+                    $('#box2').animate({top:"635px"},1500,function(){
+                        $("#box2").animate({left:"50px"},1000,function(){
+                            $("#box2").animate({top:"0px"},1500,function(){
+                                controlBox2();
+                            });
+                        });
+                    });
+            });
+        }
+        function controlBox3(){
+              $("#box3").animate({left:'1440px'},1500,function(){
+                    $('#box3').animate({top:"635px"},1000,function(){
+                        $("#box3").animate({left:"50px"},1500,function(){
+                            $("#box3").animate({top:"0px"},1500,function(){
+                                controlBox3();
+                            });
+                        });
+                    });
+            });
+        }
+        function controlBox4(){
+             $("#box4").animate({left:'1430px'},1500,function(){
+                    $('#box4').animate({top:"635px"},1000,function(){
+                        $("#box4").animate({left:"50px"},1500,function(){
+                            $("#box4").animate({top:"0px"},1000,function(){
+                                controlBox4();
+                            });
+                        });
+                    });
+            });
+        }
+      
+    
+//                function animation()
 //        {
 //         
 //          $("#allbox").animate({
@@ -27,96 +73,59 @@
 //                        });
 //            });
 //        }
-        
+//        
       
         
         
-        function controlBox1(){
-            
-        }
-        function controlBox2(){
-            
-        }
-        function controlBox3(){
-            
-        }
-        function controlBox4(){
-            
-        }
-        
-        function toleft(){
-            $("#box1").animate({left:'1000px'},"slow",function(){
-                    $('#box1').animate({top:"700px"},"slow",function(){
-                        $("#box1").animate({right:"1000"},"slow",function(){
-                            $(this).animate({bottom:"100px"},"slow",function(){
-                                toleft();
-                            });
-                        });
-                    });
-            });
-        }
-        function toright(){
-             $("#box2").animate({right:'100px'},"slow");
-        }
-        function tobutton(){
-             $("#box3").animate({button:'100px'},"slow");
-        }
-        function totop(){
-             $("#box4").animate({top:'100px',right:"0"},3000).animate({right:"200px"},3000);
-        }
-      
-    
     
     
     </script>
     <!--Code CSS-->
     <style>
-        body{
-            height: 100%;
-            width: 100%;
-        }
         #box1{
             background-color: crimson;
             width: 100px;
             height: 100px;
             position: absolute;
+            border-radius: 8px;
         }
         #box2{
             background-color: aquamarine;
             width: 100px;
             height: 100px;
             position: absolute;
+            border-radius: 8px;
         }
         #box3{
             background-color: blue;
             width: 100px;
             height: 100px;
             position: absolute;
+            border-radius: 8px;
         }
         #box4{
             background-color: chartreuse;
             width: 100px;
             height: 100px;
             position: absolute;
+            border-radius: 8px;
         }
         #allbox{
             width: 1500px;
             height: 750px;
             margin: auto;
-            overflow: hidden;
+/*            overflow: hidden;*/
             border: 1px solid red;
         }
     </style>
 </head>
 <body>
- 
-            
-            <div id="allbox">
+    <div id="allbox">
                 <div id="box1"></div>
                 <div id="box2"></div>
                 <div id="box3"></div>
                 <div id="box4"></div>     
-            </div>
+    </div>
        
 </body>
 </html>
