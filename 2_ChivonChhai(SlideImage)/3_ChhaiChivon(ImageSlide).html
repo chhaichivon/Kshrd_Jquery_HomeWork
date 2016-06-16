@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Image Slide</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<!--Style CSS-->
+		<style>
+                img{
+                        display:none;
+                        position:absolute;
+                        width:0px;
+                } 
+        </style>
+</head>
+<body>
+	<!--Image Slide-->
+		<img id="img1" src="slide/img1.png" alt="Image not found" >
+        <img id="img2" src="slide/img2.jpg" alt="Image not found" >
+        <img id="img3" src="slide/img3.jpg" alt="Image not found" >
+        <img id="img4" src="slide/img4.jpg" alt="Image not found" >
+        <img id="img5" src="slide/s1.jpg" alt="Image not found" >
+        <img id="img6" src="slide/s2.jpg" alt="Image not found" >
+        <img id="img7" src="slide/s3.jpg" alt="Image not found" >
+        <img id="img8" src="slide/s4.jpg" alt="Image not found" >
+        <img id="img9" src="slide/s5.jpg" alt="Image not found" >
+
+<!--Jquery Code-->
+<script>
+	$(document).ready(function(){
+		AnimateionImage(0);
+		
+		function AnimateionImage(i){
+			if(i > $("img").length-1) 
+				i=0; // load image index 0 first
+				$("#"+$("img")[i].id).animate({
+					left:'0%', // set left 0%
+					borderRadius: '30',
+					width:'700px', 
+					},2000).animate({
+						left:'100%' //animate to left 100%
+						},2000).animate({
+							width:'0%'   //set left width= 0  for hide image
+							},1).animate({
+								left:'0%'  //  left=0%
+								},1,function(){  // function condtion image for loop
+									if(i > $("img").length-1) // check i > image length
+										i=0; //  set i =0 
+										i++; //  increase i++  
+										AnimateionImage(i); //  call back function 
+							});
+			}
+	});
+</script>
+   
+
+
+</body>
+</html>
