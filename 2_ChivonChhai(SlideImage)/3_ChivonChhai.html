@@ -1,114 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<title>Hide & Show</title>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<style>
+#img1,#img2,#img3,#img4{
+display:none;
+position:absolute;
+width:0px;
+} 
+</style>
 
-    <!--Jquery Code-->
-	<script type="text/javascript">
 
-        var images = new Array('img4.jpg', 'img2.jpg', 'img3.jpg');
-        var index = 1;
-        
-        
-        
-        $(document).ready(function(){
-               Img();
-        });
-        function Img(){
-             $("#img1").animate({
-                        opacity: '1',
-                        width: '100%',
-                        height:'100%'
-                }, 2000).animate({left:"500px"},2000,
-                                 function(){
-                                    $(this).hide(2000, function(){
-                                        $("#img2").animate({
-                                        opacity: '1',
-                                        width: '500px'
-                                }, 2000).animate({left:"500px"},2000, function(){
-                                                                        $(this).hide(2000);
-                                                                        });
-                });
-                 });
-        }
-        function ControlImg(img1){
-            
-        }
-        
-//        $(document).ready(function(){
-////            ImageAnimation();
-//             $("#image").animate(opacity: '0.4',
-//                        height: '500px',
-//                        width: '500px',6000); /*function(){
-//                                $("#image").animate({left:"100%"},7000); */
-//              
-//             /*});*/
-//        });
 
-//    function ImageAnimation()
-//        {
-//            $("#image").animate({height:"200px",width:"200px"},function(){
-//                                $("#image").animate({left:"100%"},5000);
-//                         }
-//                    
-//                        
-//                    
-//                
-//        }
-//        
-//        $("#allbox").show({width:"100px",widths:"100px"},"slow");
-//            $("#allbox").animate({left: '250px'}, function(){
-//              $("#allbox").animate({left: '0px'},function(){ImageAnimation();});
-//              });
-        
-        
-        ////        function animation()
-////        {
-////                $("div").animate({left: '250px'}, function()
-////                                 {
-////                        $("div").animate({left: '0px'},function(){
-////                            animation();
-////         
-//    
-//            });
-//        }
-
+<script>
+$(document).ready(function(){
+ImageAnimate(0);
     
-    </script>
-    <!--CSS Code-->
-	<style type="text/css">
-	    
-       
-        
-        
-	</style>
-</head>
-    <!--Body Code-->
-<body>
-<!--
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-8 col-md-12 col-lg-8 col-lg-12">
--->
-            <div id="image">
-                    <img id="img1" src="tt.jpg" style="opacity:0;position:absolute; width:0"/>
-                    <img id="img2" src="slide/img1.png" style="opacity:0;position:absolute; width:0"/>
-                    <img id="img3" src="slide/img2.jpg" style="opacity:0;position:absolute; width:0"/>
-                    <img id="img4" src="slide/img3.jpg" style="opacity:0;position:absolute; width:0"/>
+function ImageAnimate(i){
+		if(i > $("img").length-1)
+		 i=0;
+			$("#"+$("img")[i].id).animate( {
+					 left:'0%',width:'1000px',height:'700px',borderRadius:'50' 
+					 },5000).animate({
+						 left:'100%',borderRadius:'50'},4000).animate({
+							 width:'0%'},1).animate({
+								 left:'0%'},1, function(){ 
+								 if(i > $("img").length-1)
+										i=0;i++; ImageAnimate(i);
+							});
+		}
+});
+</script>
+    <!--Image Flow-->
 
-<!--                    <img  src="slide/img2.jpg"/>   -->
-            </div> 
-<!--
-        </div>
-    </div>
-</div>
--->
+
+
+
+</head>
+<body>
+
+<img id="img2" src="slide/s1.jpg" alt="Image not found" >
+<img id="img1" src="slide/s2.jpg" alt="Image not found" >
+<img id="img3" src="slide/s3.jpg" alt="Image not found" >
+<img id="img4" src="slide/s4.jpg" alt="Image not found" >
+
+
+
 </body>
-    <!--End Body Code-->
 </html>
