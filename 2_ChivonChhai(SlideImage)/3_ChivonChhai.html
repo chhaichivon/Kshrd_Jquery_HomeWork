@@ -13,7 +13,7 @@ width:0px;
 
 <script>
 $(document).ready(function(){
-ImageAnimate(0);
+	ImageAnimate(0);
     
 function ImageAnimate(i){
 		if(i > $("img").length-1)
@@ -21,11 +21,13 @@ function ImageAnimate(i){
 			$("#"+$("img")[i].id).animate( {
 					 left:'0%',width:'1000px',height:'700px',borderRadius:'50' 
 					 },5000).animate({
-						 left:'100%',borderRadius:'50'},4000).animate({
+						 left:'100%',borderRadius:'50'},5000).animate({
 							 width:'0%'},1).animate({
 								 left:'0%'},1, function(){ 
-								 if(i > $("img").length-1)
-										i=0;i++; ImageAnimate(i);
+								 	if(i > $("img").length-1)
+										i=0;
+										i++; 
+										ImageAnimate(i);
 							});
 		}
 });
@@ -38,8 +40,8 @@ function ImageAnimate(i){
 </head>
 <body>
 
-<img id="img2" src="slide/s1.jpg" alt="Image not found" >
-<img id="img1" src="slide/s2.jpg" alt="Image not found" >
+<img id="img1" src="slide/s1.jpg" alt="Image not found" >
+<img id="img2" src="slide/s2.jpg" alt="Image not found" >
 <img id="img3" src="slide/s3.jpg" alt="Image not found" >
 <img id="img4" src="slide/s4.jpg" alt="Image not found" >
 
